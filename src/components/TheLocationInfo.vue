@@ -99,7 +99,7 @@ const { width } = useWindowSize()
   
   .date-box-text {
     position: fixed;
-    top: calc(var(--topbar-height, 48px) + 15rem);
+    top: calc(var(--topbar-height, 48px) + 10rem);
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
@@ -131,7 +131,7 @@ const { width } = useWindowSize()
   .main-form-btn {
     font-size: 1.3rem;
     top: calc(calc(50% + 3.5rem + 1cm) + var(--location-box-height-mobile, 1.6cm) + 80px) !important;
-    width: 70vw;
+    width: 80vw;
   }
 }
 
