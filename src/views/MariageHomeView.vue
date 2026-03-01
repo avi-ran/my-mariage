@@ -14,7 +14,7 @@ import bg from '../assets/background-img.png'
     >
     </section>
     <TheCountdown />
-    <TheLocationInfo targetDate="Samedi 21 Aout 2027" 
+    <TheLocationInfo targetDate="Samedi 21 Aout 2027"
         :location="`Ô Jardin,
     81 route de l'Entre-Deux,
     Saint-Pierre 97410,
@@ -44,5 +44,16 @@ import bg from '../assets/background-img.png'
   background-position: center center; /* ensure image is centered */
   background-attachment: scroll; /* avoid weird fixed behavior on mobile */
   overflow: hidden;
+}
+
+@media (max-width: 520px) {
+  .welcome-mariage {
+    width: 100vw;
+    left: 0;
+    height: 100vh;
+    min-height: unset;
+    animation: none;
+    background-position: center center;
+  }
 }
 </style>

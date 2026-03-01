@@ -39,8 +39,8 @@ const { width } = useWindowSize()
   z-index: 20; /* same layer as countdown */
   width: 14cm;
   height: var(--location-box-height, 3cm);
-  background: var(--location-fill, #F4E4C6);
-  color: var(--location-text, #1f2937);
+  background: var(--location-fill);
+  color: var(--location-text);
   border-radius: 4cm; /* fully rounded left/right sides */
   display: flex;
   align-items: center;
@@ -96,19 +96,17 @@ const { width } = useWindowSize()
 
 /* Small screens: make it fluid and slightly smaller */
 @media (max-width: 520px) {
-  
+
   .date-box-text {
     position: fixed;
-    top: calc(var(--topbar-height, 48px) + 15rem);
+    top: calc(var(--topbar-height, 48px) + 10rem);
     left: 50%;
     transform: translateX(-50%);
     z-index: 20;
     font-family: 'Monelos', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 1.5rem;
-    color: var(--location-text, #1f2937);
+    color: var(--location-text);
     padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     white-space: nowrap;
   }
 
@@ -118,7 +116,7 @@ const { width } = useWindowSize()
     height: var(--location-box-height-mobile, 1.6cm) + 30px;
     border-radius: 2.9cm;
   }
-  
+
   .location-box-address {
     font-size: 1rem;
   }
@@ -131,7 +129,7 @@ const { width } = useWindowSize()
   .main-form-btn {
     font-size: 1.3rem;
     top: calc(calc(50% + 3.5rem + 1cm) + var(--location-box-height-mobile, 1.6cm) + 80px) !important;
-    width: 70vw;
+    width: 80vw;
   }
 }
 

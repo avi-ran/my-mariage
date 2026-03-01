@@ -159,6 +159,12 @@ a,
   }
 }
 
+@media (max-width: 520px) {
+  #app {
+    padding: 0;
+  }
+}
+
 @media (min-width: 1024px) {
   body {
     display: flex;
