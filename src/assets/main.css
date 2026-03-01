@@ -1,0 +1,173 @@
+@import './base.css';
+
+:root {
+  --app-vertical-padding: 4rem; /* 2rem top + 2rem bottom fallback */
+  --topbar-height: 4px; /* matches .topbar height */
+  --accent-fill: #2d4e28; /* main fill color used for countdown/text */
+  --accent-fill-hover: rgb(89, 140, 108); /* hover state for buttons/interactive elements */
+  --accent-text: #bcddb1; /* dark text color to sit on top of accent */
+  --topbar-text: var(--accent-text); /* text color for brand and buttons */
+  --location-fill: var(--accent-fill); /* background fill for location box */
+  --location-text: var(--accent-text); /* text color for location box */
+  /* countdown positioning defaults (can be overridden) */
+  --countdown-top: calc(var(--topbar-height, 56px) + 9.5rem);
+  --countdown-top-mobile: calc(var(--topbar-height, 48px) + 3.5rem);
+  --countdown-height: 4rem;
+  --countdown-fill: var(--accent-text);
+  /* location box positioning (uses countdown vars) */
+  --location-box-top: calc(var(--countdown-top) + var(--countdown-height) + 1.5cm);
+  --location-box-top-mobile: calc(var(--countdown-top-mobile) + var(--countdown-height) + 1cm);
+  --location-box-height: 3cm;
+  --location-box-height-mobile: 1.6cm;
+} 
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* optional if you don't want any horizontal overflow at all */
+  overflow-x: hidden;
+}
+a,
+.green {
+  text-decoration: none;
+  color: hsla(89, 24%, 26%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+/* topbar wrapper: sand background and fixed topbar */
+.topbar {
+  background-color: var(--accent-fill); /* sand color - adjust if needed */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 56px;
+  box-sizing: border-box;
+  padding: 0 1.25rem;
+}
+
+/* left area (brand)*/
+.topbar .brand {
+    font-weight: 600;
+    font-family: 'Monelos', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--topbar-text, hsla(89, 24%, 26%, 1));
+}
+
+/* right-aligned actions */
+.topbar .actions {
+    margin-left: auto; /* pushes actions to the right */
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.topbar .btn {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--topbar-text, hsla(89, 24%, 26%, 1));
+}
+
+/* Primary form button used across the site */
+.main-form-btn {
+  display: inline-block;
+  background: transparent;
+  font-family: 'Monelos', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--accent-text, #F4E4C6);
+  border: 1px solid var(--accent-text, #F4E4C6);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 800;
+  line-height: 1;
+  transition: background-color 220ms ease, color 220ms ease, transform 120ms ease;
+  box-sizing: border-box;
+}
+
+.main-form-btn:hover,
+.main-form-btn:focus {
+  color: var(--topbar-text, hsla(89, 24%, 26%, 1));
+  /* fill the button with the same color used for the outline */
+  background: var(--location-fill, #F4E4C6);
+  border-color: var(--location-fill, #F4E4C6);
+  outline: none;
+}
+
+.main-form-btn a {
+  color: inherit; /* inherit color from the button */
+  text-decoration: none; /* remove underline from link */
+}
+
+.main-form-btn:active {
+  transform: translateY(1px);
+}
+
+
+/* ensure the welcome section can host absolutely positioned overlays */
+.welcome-mariage {
+  position: relative;
+  z-index: 0; /* background sits at z-index 0 */
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* countdown: centered overlay on top of the background image */
+
+
+.countdown-timer-description {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  font-size: 30px;/* clamp(16px, 4.5vw, 24px); responsive clamp for description */
+  width: 100%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2; /* above the background but below the topbar (topbar is 1000) */
+  font-family: 'Monelos', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--accent-fill); /* contrasting color */
+  padding: 0 1rem;
+
+  /* increase spacing between words (responsive) */
+  word-spacing: 100PX;
+  /* slight letter spacing to improve readability */
+  /* letter-spacing: 0.01em;
+  line-height: 1.4; */
+}
+
+
+@media (hover: hover) {
+  .btn:hover {
+    background-color: hsla(89, 24%, 26%, 1);
+    color: var(--accent-fill);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}

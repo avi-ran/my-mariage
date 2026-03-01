@@ -1,0 +1,1 @@
+export const mariageDate = new Date('2027-08-21T13:30:00')
