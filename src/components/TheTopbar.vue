@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { mariageDate } from '../stores/mariageConst'
+import { mariageDate } from '../stores/mariageConst'
 import 'add-to-calendar-button'
 const endDate = new Date(mariageDate.getTime() + 13 * 60 * 60 * 1000); // Add  hours to mariageDate
 defineProps<{
