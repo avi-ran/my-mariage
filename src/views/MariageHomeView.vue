@@ -1,15 +1,21 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import TheCountdown from '../components/TheCountDown.vue'
 import TheLocationInfo from '../components/TheLocationInfo.vue'
+import { useThemeStore, palettes } from '../stores/themeStore'
 
-// This is a placeholder component for the marriage welcome page
 import bg from '../assets/background-img.png'
+
+const store = useThemeStore()
+const grayscaleIds = new Set(['sage', 'crimson', 'salmon'])
+const isGrayscale = computed(() => { const id = palettes[store.activeIndex]?.id; return id !== undefined && grayscaleIds.has(id) })
 </script>
 
 <template>
   <main>
     <section
     class="welcome-mariage"
+    :class="{ grayscale: isGrayscale }"
     :style="{ backgroundImage: `url(${bg})` }"
     >
     </section>
@@ -32,7 +38,12 @@ import bg from '../assets/background-img.png'
   }
 }
 
+.welcome-mariage.grayscale {
+  filter: grayscale(100%);
+}
+
 .welcome-mariage {
+  transition: filter 600ms ease;
   position: relative;
   width: 140vw;
   left: 50%;

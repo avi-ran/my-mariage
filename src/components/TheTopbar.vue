@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { mariageDate } from '../stores/mariageConst'
 import 'add-to-calendar-button'
-const endDate = new Date(mariageDate.getTime() + 13 * 60 * 60 * 1000); // Add  hours to mariageDate
+import TheNavMenu from './TheNavMenu.vue'
+
+const endDate = new Date(mariageDate.getTime() + 13 * 60 * 60 * 1000)
+
 defineProps<{
   msg: string
 }>()
@@ -9,10 +12,12 @@ defineProps<{
 
 <template>
   <div class="topbar">
-    <!-- topbar left msg -->
+    <TheNavMenu />
+
     <div class="brand">
       <h1>{{ msg }}</h1>
     </div>
+
     <div class="actions">
       <add-to-calendar-button
         name="Ajouter à l'agenda"
@@ -31,3 +36,30 @@ defineProps<{
     </div>
   </div>
 </template>
+
+<style scoped>
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.brand {
+  justify-self: center;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  white-space: nowrap;
+}
+
+.actions {
+  justify-self: end;
+}
+
+@media (max-width: 520px) {
+  .brand h1 {
+    font-size: 0.95rem;
+  }
+}
+</style>
