@@ -1,15 +1,25 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useSwipe } from '@vueuse/core'
-import { useThemeStore, palettes } from '../stores/themeStore'
+import { useThemeStore, palettes, type Palette } from '../stores/themeStore'
 import darkGreenImg from '../assets/colors-images/DARK-GREEN.png'
+import lightGreenImg from '../assets/colors-images/LIGHT-GREEN.png'
+import forestGreenImg from '../assets/colors-images/FOREST-GREEN.png'
+import terracottaImg from '../assets/colors-images/TERRACOTTA.png'
+import lightPink from '../assets/colors-images/LIGHT-PINK.png'
+import coral from '../assets/colors-images/CORAL.png'
 
 const paletteImages: Record<string, string> = {
   teal: darkGreenImg,
+  sage: lightGreenImg,
+  forest: forestGreenImg,
+  terracotta: terracottaImg,
+  lightPink: lightPink,
+  coral: coral,
 }
 
 const store = useThemeStore()
-const current = computed(() => palettes[store.activeIndex] ?? palettes[0])
+const current = computed<Palette>(() => palettes[store.activeIndex] ?? palettes[0] as Palette)
 
 // ── Swipe ──────────────────────────────────────────────────────────────────
 const swipeTarget = ref<HTMLElement | null>(null)

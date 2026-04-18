@@ -18,7 +18,6 @@ const close = () => { menuOpen.value = false }
     <nav class="nav-overlay" v-if="menuOpen" @click.self="close">
       <ul>
         <li><RouterLink to="/" @click="close">Accueil</RouterLink></li>
-        <li><RouterLink to="/contact" @click="close">Contact</RouterLink></li>
         <li><RouterLink to="/nos-couleurs" @click="close">Nos couleurs</RouterLink></li>
       </ul>
     </nav>

@@ -7,7 +7,7 @@ import { useThemeStore, palettes } from '../stores/themeStore'
 import bg from '../assets/background-img.png'
 
 const store = useThemeStore()
-const grayscaleIds = new Set(['sage', 'crimson', 'salmon'])
+const grayscaleIds = new Set(['sage', 'terracotta', 'coral']) // IDs des palettes à afficher en niveaux de gris
 const isGrayscale = computed(() => { const id = palettes[store.activeIndex]?.id; return id !== undefined && grayscaleIds.has(id) })
 </script>
 
