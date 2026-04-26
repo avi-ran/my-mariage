@@ -116,6 +116,10 @@ a,
   transform: translateY(1px);
 }
 
+a.main-form-btn {
+  color: var(--accent-text, #F4E4C6);
+}
+
 
 /* ensure the welcome section can host absolutely positioned overlays */
 .welcome-mariage {

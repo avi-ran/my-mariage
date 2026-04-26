@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'nos-couleurs',
       component: () => import('../views/NosCouleursView.vue'),
     },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/NotFoundView.vue'),
+    },
   ],
 })
 
