@@ -30,7 +30,7 @@ const timeBeforeMariage = Math.max(0, Math.ceil((mariageDate.getTime() - Date.no
   </vue-countdown>
   <!-- Timer description -->
   <!-- Main message -->
-  <!-- Location description -->  
+  <!-- Location description -->
 </template>
 <style scoped>
 

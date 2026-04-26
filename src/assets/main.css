@@ -19,7 +19,7 @@
   --location-box-top-mobile: calc(var(--countdown-top-mobile) + var(--countdown-height) + 1cm);
   --location-box-height: 3cm;
   --location-box-height-mobile: 1.6cm;
-} 
+}
 
 #app {
   width: 100%;
@@ -86,8 +86,8 @@ a,
   display: inline-block;
   background: transparent;
   font-family: 'Monelos', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  color: var(--accent-text, #F4E4C6);
-  border: 1px solid var(--accent-text, #F4E4C6);
+  color: var(--main-info-txt-color, #F4E4C6);
+  border: 1px solid var(--main-info-txt-color, #F4E4C6);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   text-align: center;
